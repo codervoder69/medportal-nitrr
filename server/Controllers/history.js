@@ -63,26 +63,26 @@ exports.getByMonth=async(req,res)=>{
     }
 }
 
-exports.getByRoll=async(req,res)=>{
+exports.getByRoll = async (req, res) => {
     try {
-        const {roll}=req.query;
-        const details=await History.find({roll:roll}).populate("student").sort({createdAt:-1});
-        if(details.length===0){
-            return res.status(400).json({
-                success:false,
-                message:"No prior data"
-            })
-        }
+        const { roll } = req.query;
+
+        const details = await History.find({ roll })
+            .populate("student")
+            .sort({ createdAt: -1 });
+
         return res.status(200).json({
-            success:true,
-            message:"fetched success",
+            success: true,
+            message: details.length
+                ? "History fetched successfully"
+                : "No prior data",
             details
-        })
-        
+        });
+
     } catch (error) {
-        return res.status(400).json({
-            success:false,
-            message:"Error in fetching"
-        })
+        return res.status(500).json({
+            success: false,
+            message: "Error in fetching history"
+        });
     }
-}
+};
