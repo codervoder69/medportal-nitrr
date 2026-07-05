@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     "http://localhost:5173",
-  "https://medportal-nitrr-liard.vercel.app/"
+  "https://medportal-nitrr-liard.vercel.app"
           ], // Your deployed frontend URL
   credentials: true, //  Required to allow cookies
 }));
