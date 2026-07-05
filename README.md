@@ -79,3 +79,19 @@ MedPortal NITRR is a full-stack MERN (MongoDB, Express, React, Node.js) web appl
 
 ## 🗂️ Folder Structure
 
+Hospital-Management-System/
+│
+├── client/
+│   ├── src/
+│   └── public/
+│
+├── server/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── Mailtemplates/
+│   └── config/
+│
+└── README.md
